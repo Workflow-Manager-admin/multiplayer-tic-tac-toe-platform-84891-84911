@@ -1,0 +1,83 @@
+:root {
+  --primary: #1976d2;
+  --secondary: #424242;
+  --accent: #ffb300;
+  --bg-main: #f2f5fa;
+  --bg-panel: #ffffff;
+  --bg-secondary: #f7f9fc;
+  --text-main: #222c36;
+  --text-inactive: #7e8697;
+}
+
+/* Inherit support of theme switcher from default template */
+[data-theme='dark'] {
+  --primary: #1976d2;
+  --secondary: #424242;
+  --accent: #ffb300;
+  --bg-main: #232328;
+  --bg-panel: #24292f;
+  --bg-secondary: #232328;
+  --text-main: #fcfcfc;
+  --text-inactive: #aaaaaa;
+}
+
+.App {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  transition: background 0.3s;
+}
+
+.ttt-navbar {
+  user-select:none;
+}
+
+.ttt-home input, .ttt-home button {
+  font-family: inherit;
+}
+
+.ttt-btn {
+  box-shadow: 0 1px 3px #0000000a;
+  transition: background .17s, box-shadow .18s, opacity .1s;
+  border: none;
+}
+.ttt-btn:focus {
+  outline: 2px solid var(--primary);
+}
+.ttt-history-panel button:focus {
+  outline: 2px solid var(--primary);
+}
+
+/* Board & cell styles */
+.ttt-cell {
+  border-radius: 0;
+  appearance: none !important;
+  transition: background 0.17s, color 0.19s;
+  font-family: inherit;
+}
+.ttt-cell:active {
+  opacity: 0.92;
+}
+
+.ttt-main-panel, .ttt-home {
+  transition: background .26s, box-shadow .18s;
+}
+
+@media (max-width: 460px) {
+  .ttt-main-panel {
+    min-width: 0 !important;
+    max-width: 99vw !important;
+    padding: 11px 0 11px 0 !important;
+  }
+}
+
+/* Scrollbar styling for desktop side panel */
+.ttt-history-panel ul::-webkit-scrollbar {
+  width: 6px;
+  background: #eeeeee33;
+}
+.ttt-history-panel ul::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 6px;
+}
